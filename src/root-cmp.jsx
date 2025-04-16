@@ -13,7 +13,7 @@ export function App() {
           <AppHeader />
           <main className="main-layout">
             <Routes>
-              <Route element={ToyIndex} path="/toy" />
+              <Route element={<ToyIndex />} path="/toy" />
             </Routes>
           </main>
         </section>
