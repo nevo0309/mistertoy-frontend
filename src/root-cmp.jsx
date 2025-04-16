@@ -12,7 +12,9 @@ export function App() {
         <section className="app">
           <AppHeader />
           <main className="main-layout">
-            <Route element={ToyIndex} path="/toy" />
+            <Routes>
+              <Route element={ToyIndex} path="/toy" />
+            </Routes>
           </main>
         </section>
       </Router>
