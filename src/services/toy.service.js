@@ -2,6 +2,17 @@ import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
 
 const TOY_KEY = 'toyDB'
+
+const labels = [
+  'On wheels',
+  'Box game',
+  'Art',
+  'Baby',
+  'Doll',
+  'Puzzle',
+  'Outdoor',
+  'Battery Powered',
+]
 _createToys()
 
 export const toyService = {
@@ -89,17 +100,6 @@ function getImportanceStats() {
     return data
   })
 }
-
-const labels = [
-  'On wheels',
-  'Box game',
-  'Art',
-  'Baby',
-  'Doll',
-  'Puzzle',
-  'Outdoor',
-  'Battery Powered',
-]
 
 function _createToys() {
   let toys = utilService.loadFromStorage(TOY_KEY)
