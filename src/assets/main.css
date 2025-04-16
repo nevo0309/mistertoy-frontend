@@ -1,0 +1,6 @@
+/*CMPS*/
+@import './style/cmps/ToyList.css';
+@import './style/cmps/ToyPreview.css';
+
+/*PAGES*/
+@import './style/pages/ToyIndex.css';

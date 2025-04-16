@@ -1,0 +1,60 @@
+.toy-preview {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.toy-name {
+  font-size: 1.8rem;
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+.toy-price {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.toy-labels {
+  font-size: 1rem;
+  color: #777;
+}
+
+.labels-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.label {
+  background-color: #efefef;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.action-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  flex: 1;
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: #f6f6f6;
+  border-color: #bbb;
+  transform: translateY(-4px);
+}
