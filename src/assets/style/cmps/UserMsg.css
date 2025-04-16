@@ -1,0 +1,47 @@
+.user-msg {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+
+  background: rgba(34, 34, 34, 0.9);
+  color: #fff;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+
+  transition: all 0.3s ease;
+}
+
+.user-msg button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 999px;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.user-msg button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.success {
+  background-color: var(--success);
+}
+
+.error {
+  background-color: var(--danger);
+}

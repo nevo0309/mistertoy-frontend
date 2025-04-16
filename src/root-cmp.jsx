@@ -4,11 +4,13 @@ import { Provider } from 'react-redux'
 import { store } from './store/store'
 import { ToyIndex } from './pages/toyIndex'
 import { AppHeader } from './cmps/AppHeader'
+import { UserMsg } from './cmps/UserMsg'
 
 export function App() {
   return (
     <Provider store={store}>
       <Router>
+        <UserMsg />
         <section className="app">
           <AppHeader />
           <main className="main-layout">
