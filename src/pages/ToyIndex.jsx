@@ -1,3 +1,31 @@
+// import { useEffectOnUpdate } from '../hooks/useEffectOnUpdate'
+// import { toyService } from '../services/toy.service'
+import { useSelector } from 'react-redux'
+import { loadToys } from '../store/toy/toyAction'
+import { showErrorMsg } from '../services/event-bus.service.js'
+import { ToyList } from '../cmps/ToyList.jsx'
+import { useEffect } from 'react'
+
 export function ToyIndex() {
-  return <div>ToyIndex</div>
+  const toys = useSelector(storeState => storeState.toyModule.toys)
+
+  useEffect(() => {
+    loadToys().catch(err => {
+      showErrorMsg('Cannot load cars!', err)
+    })
+  }, [])
+
+  //   useEffectOnUpdate(() => {
+  //     loadToys().catch(err => {
+  //       showErrorMsg('Cannot load cars!', err)
+  //     })
+  //   }, [])
+  console.log('toys:', toys)
+  if (!toys) return 'loading toys...'
+  return (
+    <section className="toy-index">
+      <h1 className="main-title">🧸 Luxe Toy Collection</h1>
+      <ToyList toys={toys} />
+    </section>
+  )
 }
