@@ -1,4 +1,4 @@
-export function ToyPreview({ toy }) {
+export function ToyPreview({ toy, onRemoveToy }) {
   return (
     <article className="toy-preview">
       <h3 className="toy-name">{toy.name}</h3>
@@ -19,7 +19,9 @@ export function ToyPreview({ toy }) {
       <div className="action-links">
         <button className="action-btn">Edit</button>
         <button className="action-btn">Details</button>
-        <button className="action-btn">Delete</button>
+        <button className="action-btn" onClick={() => onRemoveToy(toy._id)}>
+          Delete
+        </button>
       </div>
     </article>
   )
