@@ -5,7 +5,7 @@ export function ToyPreview({ toy, onRemoveToy }) {
     <article className="toy-preview">
       <h3 className="toy-name">{toy.name}</h3>
       <p className="toy-price">
-        Price: <span>${toy.price.toLocaleString()}</span>
+        Price: <span>{toy.price.toLocaleString()}$</span>
       </p>
       <div className="toy-labels">
         Labels:

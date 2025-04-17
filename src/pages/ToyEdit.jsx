@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { toyService } from '../services/toy.service'
 import { saveToy } from '../store/toy/toyAction'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
+import { toyLabels } from '../services/toy.service.js'
 
 export function ToyEdit() {
   const navigate = useNavigate()
@@ -29,6 +30,16 @@ export function ToyEdit() {
       value = value === '' ? '' : +value
     }
     setToyToEdit(prevToy => ({ ...prevToy, [field]: value }))
+  }
+  function handleLabelCheckboxChange({ target }) {
+    const { value, checked } = target
+    setToyToEdit(prevToy => {
+      const labels = checked
+        ? [...prevToy.labels, value]
+        : prevToy.labels.filter(label => label !== value)
+
+      return { ...prevToy, labels }
+    })
   }
 
   function onSaveToy(ev) {
@@ -70,7 +81,25 @@ export function ToyEdit() {
           placeholder="Ender price..."
           onChange={handleChange}
         />
-        <div>
+
+        <label>Labels:</label>
+        <div className="labels-checkboxes">
+          {toyLabels.map(label => (
+            <label key={label}>
+              <input
+                id="labels"
+                type="checkbox"
+                name="labels"
+                value={label}
+                checked={toyToEdit.labels.includes(label)}
+                onChange={handleLabelCheckboxChange}
+              />
+              {label}
+            </label>
+          ))}
+        </div>
+
+        <div className="btn-group">
           <button>{toyToEdit._id ? 'Save' : 'Add'}</button>
           <Link to="/toy">Cancel</Link>
         </div>
