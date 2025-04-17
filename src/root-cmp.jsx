@@ -18,6 +18,7 @@ export function App() {
             <Routes>
               <Route element={<ToyIndex />} path="/toy" />
               <Route element={<ToyEdit />} path="/toy/edit/:toyId" />
+              <Route element={<ToyEdit />} path="/toy/edit/" />
             </Routes>
           </main>
         </section>

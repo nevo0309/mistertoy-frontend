@@ -1,5 +1,7 @@
 // import { useEffectOnUpdate } from '../hooks/useEffectOnUpdate'
 // import { toyService } from '../services/toy.service'
+import { Link } from 'react-router-dom'
+
 import { useSelector } from 'react-redux'
 import { loadToys, removeToy } from '../store/toy/toyAction'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
@@ -36,6 +38,9 @@ export function ToyIndex() {
   return (
     <section className="toy-index">
       <h1 className="main-title">🧸 Luxe Toy Collection</h1>
+      <button className="action-btn">
+        <Link to={`/toy/edit/`}>Add</Link>
+      </button>
       <ToyList toys={toys} onRemoveToy={onRemoveToy} />
     </section>
   )
