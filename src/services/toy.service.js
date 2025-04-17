@@ -3,7 +3,7 @@ import { storageService } from './async-storage.service.js'
 
 const TOY_KEY = 'toyDB'
 
-const labels = [
+export const toyLabels = [
   'On wheels',
   'Box game',
   'Art',
@@ -13,6 +13,7 @@ const labels = [
   'Outdoor',
   'Battery Powered',
 ]
+
 _createToys()
 
 export const toyService = {
@@ -134,7 +135,7 @@ function _createToy(name, price) {
 }
 
 function _getRandomLabels() {
-  const shuffled = labels.sort(() => 0.5 - Math.random())
+  const shuffled = toyLabels.sort(() => 0.5 - Math.random())
   const count = utilService.getRandomIntInclusive(1, 3)
   return shuffled.slice(0, count)
 }
