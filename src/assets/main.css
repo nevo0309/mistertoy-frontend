@@ -2,6 +2,7 @@
 @import './style/setup/vars.css';
 
 /*CMPS*/
+@import './style/cmps/ToyEdit.css';
 @import './style/cmps/ToyList.css';
 @import './style/cmps/ToyPreview.css';
 @import './style/cmps/UserMsg.css';

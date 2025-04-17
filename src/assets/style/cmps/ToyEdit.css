@@ -1,0 +1,85 @@
+.toy-edit {
+  max-width: 480px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #2c2c2c;
+}
+
+.toy-edit h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.toy-edit form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.toy-edit label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.toy-edit input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  transition: border-color 0.2s ease;
+}
+
+.toy-edit input:focus {
+  outline: none;
+  border-color: #999;
+  background-color: #fff;
+}
+
+.toy-edit .btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.toy-edit button,
+.toy-edit a {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.toy-edit button {
+  background-color: #111;
+  color: white;
+}
+
+.toy-edit button:hover {
+  background-color: #333;
+}
+
+.toy-edit a {
+  background-color: #f0f0f0;
+  color: #444;
+  border: 1px solid #ddd;
+}
+
+.toy-edit a:hover {
+  background-color: #e4e4e4;
+}
