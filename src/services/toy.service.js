@@ -24,6 +24,7 @@ export const toyService = {
   getDefaultFilter,
   getFilterFromSearchParams,
   getImportanceStats,
+  getById,
 }
 // For Debug (easy access from console):
 window.cs = toyService
@@ -99,6 +100,10 @@ function getImportanceStats() {
     }))
     return data
   })
+}
+
+function getById(toyId) {
+  return storageService.get(TOY_KEY, toyId)
 }
 
 function _createToys() {
