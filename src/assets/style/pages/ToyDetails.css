@@ -1,0 +1,41 @@
+.toy-details {
+  max-width: 700px;
+  margin: 4rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.toy-details h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.toy-details h5 {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.toy-desctibe {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.toy-details a {
+  text-decoration: none;
+}
+
+.toy-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  margin-bottom: 1.5rem;
+}
