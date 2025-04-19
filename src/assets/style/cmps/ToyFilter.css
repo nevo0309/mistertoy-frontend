@@ -25,12 +25,12 @@
 .toy-filter form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.7rem;
 }
 
 .toy-filter label {
   font-weight: 500;
-  margin-bottom: 0.4rem;
+  margin: 0;
   color: #444;
 }
 
@@ -44,6 +44,23 @@
 }
 
 .toy-filter input:focus {
+  outline: none;
+  border-color: #999;
+  background-color: #fff;
+  box-shadow: 0 0 0 2px #ccc;
+}
+
+.toy-filter select {
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+  /* appearance: none; */
+}
+
+.toy-filter select:focus {
   outline: none;
   border-color: #999;
   background-color: #fff;
