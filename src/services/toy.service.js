@@ -32,13 +32,13 @@ window.cs = toyService
 
 function query(filterBy) {
   return storageService.query(TOY_KEY).then(toys => {
-    if (filterBy.txt) {
-      const regExp = new RegExp(filterBy.txt, 'i')
-      toys = toys.filter(toy => regExp.test(toy.txt))
+    if (filterBy.name) {
+      const regExp = new RegExp(filterBy.name, 'i')
+      toys = toys.filter(toy => regExp.test(toy.name))
     }
 
-    if (filterBy.importance) {
-      toys = toys.filter(toy => toy.importance >= filterBy.importance)
+    if (filterBy.price) {
+      toys = toys.filter(toy => toy.price <= filterBy.price)
     }
 
     return toys
