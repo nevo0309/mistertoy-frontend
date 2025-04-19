@@ -1,0 +1,66 @@
+.toy-filter {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.toy-filter:hover {
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
+.toy-filter h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.toy-filter form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.toy-filter label {
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: #444;
+}
+
+.toy-filter input {
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+}
+
+.toy-filter input:focus {
+  outline: none;
+  border-color: #999;
+  background-color: #fff;
+  box-shadow: 0 0 0 2px #ccc;
+}
+
+/* .toy-filter {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */

@@ -4,6 +4,9 @@
   gap: 2rem;
   padding: 0;
   list-style: none;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .toy-item {
