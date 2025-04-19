@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 import { utilService } from '../services/util.service.js'
+import { toyLabels } from '../services/toy.service.js'
 
 export function ToyFilter({ filterBy, onSetFilterBy }) {
   const [filterByToEdit, setFilterByToEdit] = useState({ ...filterBy })
   const debouncedSetFilter = useRef(utilService.debounce(onSetFilterBy, 300))
+  const [isLabelDropdownOpen, setIsLabelDropdownOpen] = useState(false)
 
   //   console.log(filterByToEdit, 'filter by to edit')
 
@@ -18,6 +20,17 @@ export function ToyFilter({ filterBy, onSetFilterBy }) {
     setFilterByToEdit(prevFilter => ({ ...prevFilter, [field]: value }))
     console.log('filter changed')
   }
+  function handleLabelCheckbox({ target }) {
+    const { checked, value } = target
+
+    setFilterByToEdit(prev => {
+      const labels = prev.labels || []
+      const newLabels = checked ? [...labels, value] : labels.filter(label => label !== value)
+
+      return { ...prev, labels: newLabels }
+    })
+  }
+
   return (
     <section className="toy-filter">
       <h2>Toys Filter</h2>
@@ -46,6 +59,30 @@ export function ToyFilter({ filterBy, onSetFilterBy }) {
           <option value="true">In Stock</option>
           <option value="false">Not in stock</option>
         </select>
+
+        {/* label filter */}
+        <div className="label-dropdown">
+          <div className="dropdown-toggle" onClick={() => setIsLabelDropdownOpen(prev => !prev)}>
+            <span>Labels</span>
+            <span>{isLabelDropdownOpen ? '▲' : '▼'}</span>
+          </div>
+
+          {isLabelDropdownOpen && (
+            <div className="dropdown-content">
+              {toyLabels.map(label => (
+                <label key={label}>
+                  <input
+                    type="checkbox"
+                    value={label}
+                    checked={filterByToEdit.labels?.includes(label) || false}
+                    onChange={handleLabelCheckbox}
+                  />
+                  {label}
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
       </form>
     </section>
   )

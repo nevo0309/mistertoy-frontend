@@ -44,7 +44,9 @@ function query(filterBy) {
       const isInStock = filterBy.inStock === 'true'
       toys = toys.filter(toy => toy.inStock === isInStock)
     }
-
+    if (filterBy.labels?.length) {
+      toys = toys.filter(toy => filterBy.labels.every(label => toy.labels.includes(label)))
+    }
     return toys
   })
 }
@@ -84,7 +86,7 @@ function getEmptyToy() {
 }
 
 function getDefaultFilter() {
-  return { name: '', price: 0, labels: [], inStock: true }
+  return { name: '', price: 0, labels: [], inStock: '' }
 }
 
 function getFilterFromSearchParams(searchParams) {
