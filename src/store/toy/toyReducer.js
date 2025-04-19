@@ -7,7 +7,7 @@ export const ADD_TOY = 'ADD_TOY'
 export const UPDATE_TOY = 'UPDATE_TOY'
 
 //* Filter
-export const SET_FILTER = 'SET_FILTER'
+export const SET_FILTER_BY = 'SET_FILTER_BY'
 
 //* Loader
 export const SET_IS_LOADING = 'SET_IS_LOADING'
@@ -42,14 +42,14 @@ export function toyReducer(state = initialState, action = {}) {
     case UPDATE_TOY:
       return {
         ...state,
-        toys: state.toys.map(toy => (toy._id === action.toy.id ? action.toy : toy)),
+        toys: state.toys.map(toy => (toy._id === action.toy._id ? action.toy : toy)),
       }
 
     //* Filter
-    case SET_FILTER:
+    case SET_FILTER_BY:
       return {
         ...state,
-        filterBy: action.filterBy,
+        filterBy: { ...state.filterBy, ...action.filterBy },
       }
 
     //* Loader

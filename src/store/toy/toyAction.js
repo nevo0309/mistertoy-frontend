@@ -4,7 +4,7 @@ import {
   REMOVE_TOY,
   SET_TOYS,
   UPDATE_TOY,
-  SET_FILTER,
+  SET_FILTER_BY,
   SET_IS_LOADING,
 } from './toyReducer.js'
 import { store } from '../store.js'
@@ -14,7 +14,6 @@ export function loadToys(searchParams) {
     ? toyService.getFilterFromSearchParams(searchParams)
     : store.getState().toyModule.filterBy
 
-  store.dispatch({ type: SET_FILTER, filterBy })
   store.dispatch({ type: SET_IS_LOADING, isLoading: true })
 
   return toyService
@@ -65,4 +64,7 @@ export function saveToy(toy) {
     .finally(() => {
       store.dispatch({ type: SET_IS_LOADING, isLoading: false })
     })
+}
+export function setFilterBy(filterBy) {
+  store.dispatch({ type: SET_FILTER_BY, filterBy })
 }
