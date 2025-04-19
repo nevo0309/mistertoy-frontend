@@ -40,6 +40,10 @@ function query(filterBy) {
     if (filterBy.price) {
       toys = toys.filter(toy => toy.price <= filterBy.price)
     }
+    if (filterBy.inStock === 'true' || filterBy.inStock === 'false') {
+      const isInStock = filterBy.inStock === 'true'
+      toys = toys.filter(toy => toy.inStock === isInStock)
+    }
 
     return toys
   })
