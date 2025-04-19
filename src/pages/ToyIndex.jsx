@@ -13,7 +13,7 @@ import { useEffectOnUpdate } from '../hooks/useEffectOnUpdate.js'
 export function ToyIndex() {
   const toys = useSelector(storeState => storeState.toyModule.toys)
   const filterBy = useSelector(storeState => storeState.toyModule.filterBy)
-  const [isFilterShown, setIsFilterShown] = useState(true)
+  const [isFilterShown, setIsFilterShown] = useState(false)
 
   function toggleFilter() {
     setIsFilterShown(prev => !prev)

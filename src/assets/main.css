@@ -1,4 +1,5 @@
 /*SETUP*/
+@import './style/setup/general.css';
 @import './style/setup/vars.css';
 
 /*CMPS*/
