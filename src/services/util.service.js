@@ -5,6 +5,7 @@ export const utilService = {
   loadFromStorage,
   saveToStorage,
   animateCSS,
+  debounce,
 }
 
 function makeId(length = 6) {
@@ -86,4 +87,13 @@ function animateCSS(el, animation = 'bounce') {
 
     el.addEventListener('animationend', handleAnimationEnd, { once: true })
   })
+}
+function debounce(func, timeout = 300) {
+  let timer
+  return (...args) => {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      func.apply(this, args)
+    }, timeout)
+  }
 }
