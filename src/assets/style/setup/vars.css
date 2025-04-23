@@ -1,4 +1,13 @@
 :root {
+  --color-primary: #ffcc5c; /* sunny yellow */
+  --color-secondary: #88d8b0; /* mint green */
+  --color-accent: #ff6f91; /* coral pink */
+  --color-bg-light: #fff8f2; /* creamy ivory */
+  --color-bg: #fdf1e8; /* soft peach */
+  --color-text: #333333; /* dark charcoal */
+  --color-btn-hover: #ff8aa2; /* lighter coral */
   --success: #3bb273;
   --danger: #e63946;
+
+  --font-family-primary: 'Poppins', sans-serif;
 }

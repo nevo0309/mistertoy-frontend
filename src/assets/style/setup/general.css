@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-primary);
+}
+
 .action-btn {
   flex: 1;
   text-decoration: none;
-  background-color: #111;
-  color: white;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: none;
@@ -15,9 +23,9 @@
 }
 
 .action-btn:hover {
-  background-color: #333;
+  background-color: var(--color-btn-hover);
   transform: translateY(-3px);
-  color: white;
+  color: var(--color-text);
 }
 
 .action-btn a {

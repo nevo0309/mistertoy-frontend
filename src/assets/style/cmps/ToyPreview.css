@@ -1,5 +1,5 @@
 .toy-preview {
-  padding: 1.5rem;
+  padding: 0.9rem;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
@@ -7,18 +7,18 @@
 
 .toy-name {
   font-size: 1.8rem;
-  color: #2c2c2c;
+  color: var(--color-accent);
   font-weight: 600;
 }
 
 .toy-price {
   font-size: 1.2rem;
-  color: #555;
+  color: var(--color-secondary);
 }
 
 .toy-labels {
   font-size: 1rem;
-  color: #777;
+  color: var(--color-text);
 }
 
 .labels-container {
@@ -29,11 +29,11 @@
 }
 
 .label {
-  background-color: #efefef;
+  background-color: var(--color-bg);
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
   font-size: 0.85rem;
-  color: #333;
+  color: var(--color-text);
   font-weight: 500;
 }
 
@@ -44,10 +44,11 @@
 }
 
 .in-stock {
-  color: #4caf50;
+  color: var(--color-secondary);
   font-weight: bold;
 }
+
 .no-stock {
-  color: #f44336;
+  color: var(--color-accent);
   font-weight: bold;
 }

@@ -1,7 +1,7 @@
 .toy-filter {
   width: 100%;
   max-width: 350px;
-  background-color: #fff;
+  background-color: var(--color-bg-light);
   padding: 1rem;
   margin-bottom: 2.5rem;
   border-radius: 1.5rem;
@@ -17,7 +17,7 @@
   margin-bottom: 1rem;
   font-size: 1.8rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-accent);
   text-align: center;
   font-family: 'Playfair Display', serif;
 }
@@ -31,40 +31,39 @@
 .toy-filter label {
   font-weight: 500;
   margin: 0;
-  color: #444;
+  color: var(--color-text);
 }
 
 .toy-filter input {
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-secondary);
   font-size: 1rem;
   transition: all 0.3s ease;
-  background-color: #fafafa;
+  background-color: var(--color-bg-light);
 }
 
 .toy-filter input:focus {
   outline: none;
-  border-color: #999;
+  border-color: var(--color-secondary);
   background-color: #fff;
-  box-shadow: 0 0 0 2px #ccc;
+  box-shadow: 0 0 0 2px var(--color-secondary);
 }
 
 .toy-filter select {
   padding: 0.9rem 1.2rem;
   border-radius: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-secondary);
   font-size: 1rem;
-  background-color: #fafafa;
+  background-color: var(--color-bg-light);
   transition: all 0.3s ease;
-  /* appearance: none; */
 }
 
 .toy-filter select:focus {
   outline: none;
-  border-color: #999;
+  border-color: var(--color-secondary);
   background-color: #fff;
-  box-shadow: 0 0 0 2px #ccc;
+  box-shadow: 0 0 0 2px var(--color-secondary);
 }
 
 .label-dropdown {
@@ -73,9 +72,9 @@
 }
 
 .dropdown-toggle {
-  background-color: #f8f8f8;
+  background-color: var(--color-bg);
   padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-secondary);
   border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
@@ -86,15 +85,15 @@
 }
 
 .dropdown-toggle:hover {
-  background-color: #f0f0f0;
+  background-color: var(--color-bg-light);
 }
 
 .dropdown-content {
   position: absolute;
   top: 110%;
   left: 0;
-  background: white;
-  border: 1px solid #ddd;
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-secondary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 0.75rem;
   border-radius: 8px;
@@ -109,8 +108,9 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.95rem;
+  color: var(--color-text);
 }
 
 .dropdown-content input[type='checkbox'] {
-  accent-color: #c8a165;
+  accent-color: var(--color-accent);
 }

@@ -1,7 +1,7 @@
 .toy-details {
   max-width: 700px;
   margin: 4rem auto;
-  background-color: white;
+  background-color: var(--color-bg-light);
   padding: 2rem;
   border-radius: 2rem;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
@@ -12,18 +12,18 @@
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: 600;
-  color: #222;
+  color: var(--color-accent);
 }
 
 .toy-details h5 {
   font-size: 1.2rem;
-  color: #444;
+  color: var(--color-secondary);
   margin-bottom: 1rem;
 }
 
 .toy-desctibe {
   font-size: 1rem;
-  color: #666;
+  color: var(--color-text);
   line-height: 1.5;
   margin-bottom: 2rem;
 }
