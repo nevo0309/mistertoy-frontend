@@ -3,6 +3,8 @@
 @import './style/setup/vars.css';
 
 /*CMPS*/
+@import './style/cmps/Chat.css';
+@import './style/cmps/Popup.css';
 @import './style/cmps/ToyEdit.css';
 @import './style/cmps/ToyFilter.css';
 @import './style/cmps/ToyList.css';
