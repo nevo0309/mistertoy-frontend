@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { toyService } from '../services/toy.service.js'
+import { PopUp } from '../cmps/PopUp.jsx'
+import { Chat } from '../cmps/Chat.jsx'
 
 export function ToyDetails() {
   const [toy, setToy] = useState(null)
   const { toyId } = useParams()
+  const [isChatOpen, setIsChatOpen] = useState(false)
+
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -50,6 +54,23 @@ export function ToyDetails() {
           <i className="fa-solid fa-arrow-right"></i>
         </Link>
       </div>
+
+      <section>
+        <PopUp
+          header={<h3>Chat About {toy.name}s</h3>}
+          footer={<h4>&copy; 2025-9999 Toys INC.</h4>}
+          onClose={() => setIsChatOpen(false)}
+          isOpen={isChatOpen}
+        >
+          <Chat />
+        </PopUp>
+      </section>
+
+      {!isChatOpen && (
+        <button onClick={() => setIsChatOpen(true)} className="open-chat">
+          Chat
+        </button>
+      )}
     </section>
   )
 }

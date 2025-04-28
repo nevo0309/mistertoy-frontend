@@ -9,11 +9,13 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js'
 import { ToyList } from '../cmps/ToyList.jsx'
 import { ToyFilter } from '../cmps/ToyFilter.jsx'
 import { useEffectOnUpdate } from '../hooks/useEffectOnUpdate.js'
+import { PopUp } from '../cmps/PopUp.jsx'
 
 export function ToyIndex() {
   const toys = useSelector(storeState => storeState.toyModule.toys)
   const filterBy = useSelector(storeState => storeState.toyModule.filterBy)
   const [isFilterShown, setIsFilterShown] = useState(false)
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false)
 
   function toggleFilter() {
     setIsFilterShown(prev => !prev)
@@ -64,6 +66,21 @@ export function ToyIndex() {
         <Link to={`/toy/edit/`}>Add new toy</Link>
       </button>
       <ToyList toys={toys} onRemoveToy={onRemoveToy} />
+
+      <button className="open-chat" onClick={() => setIsPopUpOpen(true)}>
+        Show PopUp
+      </button>
+
+      <PopUp
+        footer={<footer>Created by Nevo</footer>}
+        isOpen={isPopUpOpen}
+        onClose={() => setIsPopUpOpen(false)}
+      >
+        <h2>Toy store</h2>
+        <button className="popup-main-close" onClick={() => setIsPopUpOpen(false)}>
+          Close
+        </button>
+      </PopUp>
     </section>
   )
 }
