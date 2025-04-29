@@ -1,4 +1,4 @@
-import { toyService } from '../../services/toy.service.js'
+import { toyService } from '../../services/toy.service.remote.js'
 import {
   ADD_TOY,
   REMOVE_TOY,
@@ -9,10 +9,8 @@ import {
 } from './toyReducer.js'
 import { store } from '../store.js'
 
-export function loadToys(searchParams) {
-  const filterBy = searchParams
-    ? toyService.getFilterFromSearchParams(searchParams)
-    : store.getState().toyModule.filterBy
+export function loadToys() {
+  const { filterBy } = store.getState().toyModule
 
   store.dispatch({ type: SET_IS_LOADING, isLoading: true })
 
@@ -65,6 +63,6 @@ export function saveToy(toy) {
       store.dispatch({ type: SET_IS_LOADING, isLoading: false })
     })
 }
-export function setFilterBy(filterBy) {
-  store.dispatch({ type: SET_FILTER_BY, filterBy })
+export function setFilterBy(filterBy = toyService.getDefaultFilter()) {
+  store.dispatch({ type: SET_FILTER_BY, filterBy: filterBy })
 }

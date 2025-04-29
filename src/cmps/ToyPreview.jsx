@@ -10,7 +10,6 @@ export function ToyPreview({ toy, onRemoveToy }) {
         Price: <span>{toy.price.toLocaleString()}$</span>
       </p>
       <p className={stockClass}>{stock}</p>
-
       <div className="toy-labels">
         Labels:
         <div className="labels-container">
@@ -21,9 +20,7 @@ export function ToyPreview({ toy, onRemoveToy }) {
           ))}
         </div>
       </div>
-
       <hr />
-
       <div className="action-links">
         <Link className="action-btn" to={`/toy/edit/${toy._id}`}>
           Edit
