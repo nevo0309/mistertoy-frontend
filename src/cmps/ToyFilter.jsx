@@ -1,11 +1,19 @@
 import { useState, useEffect, useRef } from 'react'
 import { utilService } from '../services/util.service.js'
-import { toyLabels } from '../services/toy.service.js'
+import { toyService } from '../services/toy.service.remote.js'
 
 export function ToyFilter({ filterBy, onSetFilterBy }) {
-  const [filterByToEdit, setFilterByToEdit] = useState({ ...filterBy })
+  const [filterByToEdit, setFilterByToEdit] = useState({
+    ...filterBy,
+    labels: filterBy.labels || [],
+  })
   const debouncedSetFilter = useRef(utilService.debounce(onSetFilterBy, 300))
   const [isLabelDropdownOpen, setIsLabelDropdownOpen] = useState(false)
+  const [labels, setLabels] = useState([])
+
+  useEffect(() => {
+    toyService.getLabels().then(fetchedLabels => setLabels(fetchedLabels))
+  }, [])
 
   //   console.log(filterByToEdit, 'filter by to edit')
 
@@ -69,7 +77,7 @@ export function ToyFilter({ filterBy, onSetFilterBy }) {
 
           {isLabelDropdownOpen && (
             <div className="dropdown-content">
-              {toyLabels.map(label => (
+              {labels.map(label => (
                 <label key={label}>
                   <input
                     type="checkbox"

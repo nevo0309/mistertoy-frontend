@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { toyService } from '../services/toy.service'
+import { toyService } from '../services/toy.service.remote.js'
 import { saveToy } from '../store/toy/toyAction'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-import { toyLabels } from '../services/toy.service.js'
 
 export function ToyEdit() {
   const navigate = useNavigate()
   const [toyToEdit, setToyToEdit] = useState(toyService.getEmptyToy())
   const { toyId } = useParams()
+  const [labels, setLabels] = useState([])
 
   useEffect(() => {
+    toyService.getLabels().then(fetchedLabels => setLabels(fetchedLabels))
+
     if (toyId) loadToy()
   }, [])
 
@@ -84,7 +86,7 @@ export function ToyEdit() {
 
         <label>Labels:</label>
         <div className="labels-checkboxes">
-          {toyLabels.map(label => (
+          {labels.map(label => (
             <label key={label}>
               <input
                 id="labels"
