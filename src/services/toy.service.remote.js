@@ -1,6 +1,7 @@
 import { httpService } from './http.service.js'
 
 const BASE_URL = 'toy/'
+let cachedGoogleApiKey = null
 
 // export const toyLabels = [
 //   'On wheels',
@@ -21,6 +22,7 @@ export const toyService = {
   getFilterFromSearchParams,
   getById,
   getLabels,
+  getGoogleApi,
 }
 
 function query(filterBy = {}) {
@@ -71,6 +73,17 @@ function getById(toyId) {
 }
 function getLabels() {
   return httpService.get(BASE_URL + 'labels')
+}
+
+function getGoogleApi() {
+  if (cachedGoogleApiKey) {
+    return Promise.resolve(cachedGoogleApiKey)
+  }
+
+  return httpService.get('config/google-maps-key').then(res => {
+    cachedGoogleApiKey = res.apiKey
+    return cachedGoogleApiKey
+  })
 }
 
 // Data Model:
