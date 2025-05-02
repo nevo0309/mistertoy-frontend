@@ -1,0 +1,26 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0 1rem;
+  position: sticky;
+  z-index: 1001;
+}
+
+.header-left {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* prevent logo shifting on toggle */
+}
