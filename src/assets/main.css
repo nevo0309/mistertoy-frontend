@@ -3,6 +3,8 @@
 @import './style/setup/vars.css';
 
 /*CMPS*/
+@import './style/cmps/SideBar.css';
+@import './style/cmps/AppHeader.css';
 @import './style/cmps/Map.css';
 @import './style/cmps/Chat.css';
 @import './style/cmps/Popup.css';
@@ -16,3 +18,4 @@
 @import './style/pages/ToyIndex.css';
 @import './style/pages/ToyDetails.css';
 @import './style/pages/About.css';
+@import './style/pages/Home.css';

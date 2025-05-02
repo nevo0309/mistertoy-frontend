@@ -17,7 +17,7 @@ export function About() {
       })
   }, [])
 
-  if (!apiKey) return <div className="about-loading">Loading map...</div>
+  if (!apiKey) return <div className="about-loading">Loading..</div>
 
   return (
     <section className="about-layout">
